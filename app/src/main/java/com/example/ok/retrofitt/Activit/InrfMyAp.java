@@ -13,7 +13,9 @@ import retrofit2.http.Query;
 public interface InrfMyAp {
 
 
+    @GET("top-headlines")
+    Call<Model> call(@Query("category")String category);
 
-    @GET("everything")
-    Call<Model> call(@Query("q")String category);
+//    @GET("everything")
+//    Call<Model> call(@Query("q")String category);
 }

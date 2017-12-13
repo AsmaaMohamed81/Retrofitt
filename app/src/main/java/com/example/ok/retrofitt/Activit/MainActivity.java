@@ -1,5 +1,6 @@
 package com.example.ok.retrofitt.Activit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Adapter adapter;
     ArrayList<ArticlesItem> articlesItems;
+    firstmain firstmain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
                  //Creatrot c= new Creatrot();
+       Intent i = getIntent();
+       String name= i.getStringExtra("name");
 
-        Call<Model> call = Creatrot.getService().getArticles("bitcoin");
+        Call<Model> call = Creatrot.getService().getArticles(name);
 
         call.enqueue(new Callback<Model>() {
             @Override

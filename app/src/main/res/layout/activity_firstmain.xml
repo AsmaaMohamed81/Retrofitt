@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ok.retrofitt.Activit.firstmain">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        android:gravity="center"
+        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/business"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="business" />
+
+        <Button
+            android:id="@+id/business_entertainment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="business entertainment" />
+
+        <Button
+            android:id="@+id/gaming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="gaming" />
+
+        <Button
+            android:id="@+id/general"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="general" />
+
+        <Button
+            android:id="@+id/health-and-medical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="health-and-medical" />
+
+        <Button
+            android:id="@+id/music"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="music" />
+
+        <Button
+            android:id="@+id/politics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="politics" />
+
+        <Button
+            android:id="@+id/science-and-nature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="science-and-nature" />
+
+        <Button
+            android:id="@+id/sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sport" />
+
+        <Button
+            android:id="@+id/technology"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="technology" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

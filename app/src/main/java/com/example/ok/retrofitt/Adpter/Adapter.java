@@ -1,6 +1,7 @@
 package com.example.ok.retrofitt.Adpter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ok.retrofitt.Activit.Details;
 import com.example.ok.retrofitt.MOdel.ArticlesItem;
 import com.example.ok.retrofitt.R;
 import com.squareup.picasso.Picasso;
@@ -19,8 +21,9 @@ import java.util.ArrayList;
  */
 
 public class Adapter extends RecyclerView.Adapter<Adapter.hoderimg> {
-
+    String io,des;
     Context mcontext;
+    ArticlesItem items;
     ArrayList<ArticlesItem> articlesItems;
 
     public Adapter(Context mcontext, ArrayList<ArticlesItem> articlesItems) {
@@ -40,18 +43,19 @@ public class Adapter extends RecyclerView.Adapter<Adapter.hoderimg> {
     public void onBindViewHolder(hoderimg holder, int position) {
         int width = (int) mcontext.getResources().getDimension(R.dimen.image_width);
 
-        ArticlesItem items =articlesItems.get(position);
+
+
+         items =articlesItems.get(position);
+
+        holder.img.setTag(position);
+
 
         holder.tex.setText(items.getTitle());
 
-        Picasso.with(mcontext).load(items.getUrlToImage())
+
+               Picasso.with(mcontext).load(items.getUrlToImage())
                 .resize(width,width)
                 .into(holder.img);
-
-
-
-
-
 
     }
 
@@ -60,7 +64,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.hoderimg> {
         return articlesItems.size();
     }
 
-    class hoderimg extends RecyclerView.ViewHolder{
+    class hoderimg extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView img ;
         TextView tex;
 
@@ -69,6 +73,26 @@ public class Adapter extends RecyclerView.Adapter<Adapter.hoderimg> {
         super(itemView);
         img = (ImageView) itemView.findViewById(R.id.img);
         tex = (TextView) itemView.findViewById(R.id.Imgtitle);
+
+
+        img.setOnClickListener(this);
+
+
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = (int) view.getTag();
+
+            items = articlesItems.get(position);
+
+            Intent i = new Intent(mcontext, Details.class);
+            i.putExtra("tit",items.getTitle());
+            i.putExtra("des",items.getDescription());
+            i.putExtra("img", items.getUrlToImage());
+
+            mcontext.startActivity(i);
 
 
 
