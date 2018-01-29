@@ -55,5 +55,70 @@ Button business,business_entertainment,gaming,general,health_and_medical,music,p
                 startActivity(i);
             }
         });
+
+        business_entertainment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(firstmain.this,MainActivity.class);
+                i.putExtra("name",business_entertainment.getText());
+                startActivity(i);
+            }
+        });
+
+        gaming.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(firstmain.this,MainActivity.class);
+                i.putExtra("name",gaming.getText());
+                startActivity(i);
+            }
+        });
+
+        health_and_medical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(firstmain.this,MainActivity.class);
+                i.putExtra("name",health_and_medical.getText());
+                startActivity(i);
+            }
+        });
+
+        music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(firstmain.this,MainActivity.class);
+                i.putExtra("name",music.getText());
+                startActivity(i);
+            }
+        });
+
+        politics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(firstmain.this,MainActivity.class);
+                i.putExtra("name",politics.getText());
+                startActivity(i);
+            }
+        });
+
+        science_and_nature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(firstmain.this,MainActivity.class);
+                i.putExtra("name",science_and_nature.getText());
+                startActivity(i);
+            }
+        });
+
+        technology.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(firstmain.this,MainActivity.class);
+                i.putExtra("name",technology.getText());
+                startActivity(i);
+            }
+        });
+
+
     }
 }
